@@ -22,8 +22,11 @@
    <h1>Olá, mundo!</h1> <!-- Estrutura de comentário em HTML -->
    <p>Já me livrei da maldição.</p>
    <script>
-       var nome = window.prompt('Qual é o seu nome por favor? ') // Abre uma janela com um campo para preenchimento e armazena na variável nome.
-       window.alert('Prazer em conhecê-lo, ' + nome + '!') // Concatenação.
+       var n1 = Number.parseInt(window.prompt('Digite um número inteiro: ')) // Convertendo de String para número inteiro antes de somar.
+       var n2 = Number.parseFloat(window.prompt('Digite um número Real: ')) // Convertendo de String para número real antes de somar.
+       var n3 = Number(window.prompt('Digite um número qualquer: ')) // Convertendo de String para um número qualquer antes de somar.
+       var s = n1 + n2 + n3
+       window.alert(`A soma entre ${n1}, ${n2} e ${n3} é ${s}.`) // Uso de Template String
    </script>
 </body>
 </html>
