@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body{
+            background-color: purple;
+            color: white;
+            font: normal 15pt arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+
+    <!--<div>Clique em mim!</div>-->
+    <!--<div class="msg">Clique em mim!</div>-->
+    <!--<div name="msg">Clique em mim!</div>-->
+    <div id="msg">Clique em mim!</div>
+
+    <script>
+        var p1 = window.document.getElementsByTagName('p')[1] // Selecionando o parágrafo usando o DOM. O que está dentro de colchetes é o parágrafo selecionado. 1º: [0], 2º: [1], etc.
+
+        window.document.write('O segundo parágrafo diz: ' + p1.innerText) // Escrevendo o conteúdo do primeiro parágrafo no HTML utilizando o DOM.
+
+        var d = window.document.querySelector('div#msg') // Utilizar (#) para id e (.) para class.
+        d.innerText = 'Testando querySelector()'
+        d.style.background = 'green'
+
+        /*
+        var d = window.document.getElementById('msg') // Utilizando o ID para alterar o documento HTML. Funciona de maneira semelhante para name e class, mas, se estiver no plural (Elements), deve-se usar os colchetes para delimitar qual elemento você quer.
+        d.innerText = 'Testando o getElementById()'
+        d.style.color = 'black'
+        d.style.background = 'yellow'
+        
+        --
+
+        p1.style.color = 'yellow' // Alterando o CSS dentro do HTML utilizando o DOM.
+        var corpo = window.document.body 
+        corpo.style.background = 'black' // Alterando a cor de fundo do HTML utilizando DOM.
+        
+        --
+
+        Verificando a diferença entre o innerText e innerHTML:
+
+        window.document.write(p1.innerText`</br>`)
+        window.document.write(p1.innerHTML)
+        window.alert(p1.innerText)
+        window.alert(p1.innerHTML)
+
+        innerText seleciona somente o texto, equanto innerHTML seleciona o texto formatado.
+        */
+
+    </script>
+</body>
+</html>
