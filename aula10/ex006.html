@@ -18,14 +18,36 @@
     </style>
 </head>
 <body>
-    <div id="area" onclick="clicar()">
+    <div id="area" onclick="clicar()" onmouseenter="entrar()"onmouseout="sair()">
         Interaja...
     </div>
 </body>
     <script>
+
+        /*
+        
+        Disparando os eventos diretamente no JavaScript e não no HTML:
+
+        var a = window.document.getElementById('area') // Variável global. Má prática, segundo o livro.
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+
+        */
+
         function clicar(){
             var a = window.document.getElementById('area')
             a.innerText = 'Clicou!'
+            a.style.background = 'red'
+        }
+        function entrar(){
+            var a = window.document.querySelector('div#area')
+            a.innerText = 'Entrou'
+        }
+        function sair(){
+            var b = window.document.getElementById('area')
+            b.innerText = 'Saiu'
+            b.style.background = 'green';
         }
     </script>
 </html>
